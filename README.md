@@ -1,5 +1,6 @@
 # timebox
-With this code you can control timebox divoom, sound + image.
+With this code you can control timebox divoom, sound + image.   
+This code is not from me, just an adaptation, for authors take a look on https://github.com/derHeinz/divoom-adapter or https://github.com/jbfuzier/timeboxmini
 
 Somes exemples
 
