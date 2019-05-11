@@ -24,6 +24,7 @@ import time
 # python timebox.py time --sound="son1.wav"
 # python timebox.py text --c 255,0,0 "hello world"
 # python timebox.py temperature --c 0,255,0
+# python timebox.py image mascotte.png
 
 # Config
 MAC_TIMEBOX = "11:75:58:E4:71:30"
@@ -319,6 +320,10 @@ if len(sys.argv) > 1:
             fontSize = int(arg)
         if opt == '--sound':
             t.playsound(arg)
+
+    if sys.argv[1] == 'discover':
+        discover()
+        sys.exit(0)
 
     if sys.argv[1] == 'time':
         t.set_time(datetime.datetime.now())
