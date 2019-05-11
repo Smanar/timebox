@@ -1,0 +1,14 @@
+>> temperature
+>> time
+>> time
+>> time
+>> time
+connecting to 11:75:58:E4:71:30 at 4
+LOG : Params > text --c 255,0,0 hello world
+connecting to 11:75:58:E4:71:30 at 4
+LOG : Params > text --c 255,0,0 hello world
+connecting to 11:75:58:E4:71:30 at 4
+LOG : Params > text --c 255,0,0 hello world
+connecting to 11:75:58:E4:71:30 at 4
+LOG : Params > text --c 255,0,0 hello world
+connecting to 11:75:58:E4:71:30 at 4
