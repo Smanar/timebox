@@ -9,9 +9,9 @@ Somes exemples
 - python timebox.py temperature --c 0,255,0   
 - python timebox.py image mascotte.png   
 
-#Requirement
-sudo apt-get install bluealsa
-pip install Pillow
-pip install pybluez
+# Requirement
+sudo apt-get install bluealsa   
+pip install Pillow   
+pip install pybluez   
 
-sudo apt-get install libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev
+sudo apt-get install libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev   
