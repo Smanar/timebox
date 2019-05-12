@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# -*- coding: latin-1 -*-
+# coding: utf-8 -*-
 """Provides class TimeBox that encapsulates the TimeBox communication."""
 
 import os
@@ -103,10 +103,18 @@ class TimeBox:
     def __init__(self):
         self.messages = TimeBoxMessages()
 
+    # mpg123 -a bluealsa:HCI=hci0,DEV=11:75:58:E4:71:30,PROFILE=a2dp http://8.38.78.173:8119/idaradio
+    # aplay -D bluealsa:HCI=hci0,DEV=11:75:58:E4:71:30,PROFILE=a2dp /home/pi/timebox/sound/son1.wav
     def playsound(self,_file):
+        print('ok')
         p = os.path.join(os.path.dirname(__file__),"sound/" + _file)
-        command = "aplay -D bluealsa:HCI=hci0,DEV=" + self.host + ",PROFILE=a2dp " + p
-        print(command)
+        if _file.endswith('.wav'):
+            command = "aplay -D bluealsa:HCI=hci0,DEV=" + self.host + ",PROFILE=a2dp " + p
+        elif '/' in _file:
+            command = "mpg123 -a bluealsa:HCI=hci0,DEV=" + self.host +",PROFILE=a2dp " + 'http://' + _file + ' &'
+        else:
+            command = "mpg123 -a bluealsa:HCI=hci0,DEV=" + self.host +",PROFILE=a2dp " + p
+        #print(command)
         os.system(command)
 
     def show_text(self, txt, speed=20, font=None):
@@ -307,6 +315,9 @@ if len(sys.argv) > 1:
     fontSize= None
     font = None
 
+    #print (options)
+    #print (args)
+
     for opt, arg in options:
         if opt == '--c':
             c = checkcolor(arg)
@@ -320,6 +331,14 @@ if len(sys.argv) > 1:
             fontSize = int(arg)
         if opt == '--sound':
             t.playsound(arg)
+
+    if sys.argv[1] == 'sound':
+        if len(args) > 0:
+            t.playsound(args[0])
+        else:
+            os.system('sudo killall mpg123')
+            #os.system('sudo killall aplay')
+        sys.exit(0)
 
     if sys.argv[1] == 'discover':
         discover()
