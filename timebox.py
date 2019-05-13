@@ -68,7 +68,10 @@ def discover():
     return
 
 def checkcolor(c):
-    c2 = c.split(',')
+    if ',' in c:
+        c2 = c.split(',')
+    else:
+        c2 = c.split(' ')
     if len(c2) < 3:
         return (255,0,0)
     else:
@@ -374,7 +377,7 @@ if len(sys.argv) > 1:
             font = ImageFont.truetype(os.path.join(os.path.dirname(__file__),'fonts/Electronic scale.ttf'),9)
 
         #Fast but stop after 1 loop
-        t.show_text([(args[0]+ ' ', (255,0,0))], speed=speed, font=font)
+        t.show_text([(args[0]+ ' ', c)], speed=speed, font=font)
 
 
         #Slow but continue after deconnexion
