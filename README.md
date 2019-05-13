@@ -17,4 +17,4 @@ pip install Pillow
 pip install pybluez   
 
 sudo apt-get install libboost-python-dev libboost-thread-dev libbluetooth-dev libglib2.0-dev   
-sudo apt-get install bluealsa   (If you want to use mpg123 for mp3 ou stream).   
+sudo apt-get install mpg123 (If you want to use mpg123 for mp3 ou stream).   
