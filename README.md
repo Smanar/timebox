@@ -1,5 +1,5 @@
 # timebox
-With this code you can control timebox from divoom, sound + image.   
+With this code you can control timebox from divoom  (sound + image) and use it as matrix display, for exemple for notification in home automation system.   
 Most of this code is not from me, for real authors take a look on https://github.com/derHeinz/divoom-adapter or https://github.com/jbfuzier/timeboxmini .    
 
 On Domoticz use the wrapper "timebox.sh", you can enable log with it too.   
